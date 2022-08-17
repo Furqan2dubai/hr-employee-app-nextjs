@@ -54,6 +54,8 @@ export default function Home() {
 		setError(""); 
 		if (e.target.files.length) {
 			const inputFile = e.target.files[0]; 
+      console.log('Size: ',inputFile.size,'KB' );
+			if(inputFile.size > 20000){alert('max. 2MB'); return false;}
 			const fileExtension = inputFile?.type.split("/")[1];
 			if (!allowedExtensions.includes(fileExtension)) {
 				setError("Please input a csv file");
@@ -84,8 +86,8 @@ export default function Home() {
 
         <div className={styles.grid}>
           <input type='file' name='myfile' accept=".csv" onChange={handleFileChange} />
+          <button onClick={handleParse} className="btn btn-outline-primary">Upload</button>
         </div>
-        <button onClick={handleParse}>Upload</button>
       </main>
 
       <footer className={styles.footer}>

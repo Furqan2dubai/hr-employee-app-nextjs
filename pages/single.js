@@ -32,31 +32,33 @@ export default function single({data , page}) {
   return (
     <div className='container'>
         <Nav/> 
-        <h3>Edit Employee</h3> 
-         
-        <div className='row m-5' id="form">
-            <div className='row m-1'>
-                <div className='col-3'><b>Id:</b></div> 
-                <div className='col-9'>{data.id} </div>
-            </div>
-            <div className='row m-1'>
-                <div className='col-3'><b>Login:</b></div>
-                <div className='col-9'> <input id="login" type="text" defaultValue={data.login}/> </div>
-            </div>
-            <div className='row m-1'>
-                <div className='col-3'><b>Name:</b></div>
-                <div className='col-9'> <input id="name" type="text" defaultValue={data.name}/> </div>
-            </div>
-            <div className='row m-1'>
-                <div className='col-3'><b>Salary:</b></div>
-                <div className='col-9'> <input id="salary" type="text" defaultValue={data.salary}/> </div>
-            </div>   
-            <div className='row m-5 text-center'> 
-                <button className='btn col-3' onClick={()=>page('list')}>Back</button>
-                <button className='btn col-3' onClick={()=>update()} >Save</button>
-            </div>   
+        <div className='col-10 '>
 
-        </div>  
+          <h3>Edit Employee</h3>  
+          <div className='row m-5' id="form">
+              <div className='row m-1'>
+                  <div className='col-3'><b>Id:</b></div> 
+                  <div className='col-9'>{data.id} </div>
+              </div>
+              <div className='row m-1'>
+                  <div className='col-3'><b>Login:</b></div>
+                  <div className='col-9'> <input id="login" type="text" defaultValue={data.login}/> </div>
+              </div>
+              <div className='row m-1'>
+                  <div className='col-3'><b>Name:</b></div>
+                  <div className='col-9'> <input id="name" type="text" defaultValue={data.name}/> </div>
+              </div>
+              <div className='row m-1'>
+                  <div className='col-3'><b>Salary:</b></div>
+                  <div className='col-9'> <input id="salary" type="text" defaultValue={data.salary}/> </div>
+              </div>   
+              <div className='row m-5 text-center'> 
+                  <button className='m-1 btn col-3 btn btn-outline-danger' onClick={()=>page('list')}>Back</button>
+                  <button className='m-1 btn col-3 btn btn-outline-primary' onClick={()=>update()} >Save</button>
+              </div>   
+
+          </div>  
+        </div>
     </div>
   )
 }
